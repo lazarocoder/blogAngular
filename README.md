@@ -7,7 +7,7 @@ git clone https://github.com/lazarocoder/blogAngular.git
 
 #importar projeto
 
-# Instale as dependencias
+# Instale as dependências
 npm install
 
 # Inicie o projeto
