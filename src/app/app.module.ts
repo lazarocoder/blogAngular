@@ -43,7 +43,9 @@ import { AuthGuard } from './auth.guard';
       { path: 'register-success', component: RegisterSuccessComponent },
       { path: 'home', component: HomeComponent },
       /*Path com redirecionamento de segurança ao tentar inserir postagem sem autenticação do usuário.
-      { path: 'add-post', component: AddPostComponent, canActivate: [AuthGuard] }*/
+      se o mesmo for comentado ou removido será removido a proteção*/
+      /*{ path: 'add-post', component: AddPostComponent, canActivate: [AuthGuard] },*/
+      { path: 'add-post', component: AddPostComponent, canActivate: [AuthGuard] },
       { path: 'add-post', component: AddPostComponent },
     ]),
     HttpClientModule,
