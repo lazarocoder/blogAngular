@@ -1,6 +1,6 @@
 .header{
   padding: 5px 20px;
-  background: royalblue;
+  background: rgb(225, 142, 65);
 }
 
 .title{
@@ -9,7 +9,7 @@
 }
 
 .login,.register{
-  float: right;
+  float: lefts;
   text-decoration: none;
   color: aliceblue;
   padding-top: 10px;
