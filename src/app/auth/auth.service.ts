@@ -22,18 +22,18 @@ export class AuthService {
 
   login(loginPayload: LoginPayload): Observable<boolean> {
     return this.httpClient.post<JwtAutResponse>(this.url + 'login', loginPayload).pipe(map(data => {
-      this.localStoraqeService.store('authenticationToken', data.authenticationToken);
-      this.localStoraqeService.store('username', data.username);
+      localStorage.setItem('token',data.authenticationToken);
+      localStorage.setItem('username',data.username);
       return true;
     }));
   }
 
   isAuthenticated(): boolean {
-    return this.localStoraqeService.retrieve('username') != null;
+    return localStorage.getItem('token') != null && localStorage.getItem('token') != undefined && localStorage.getItem('token') != '';
   }
 
   logout() {
-    this.localStoraqeService.clear('authenticationToken');
-    this.localStoraqeService.clear('username');
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
   }
 }

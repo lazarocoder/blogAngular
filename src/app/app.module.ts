@@ -1,57 +1,30 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { HttpClient, HttpHandler, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { LocalStorageService, Ng2Webstorage } from 'ngx-webstorage';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { RegisterComponent } from './auth/register/register.component';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterSuccessComponent } from './auth/register-success/register-success.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { Ng2Webstorage } from 'ngx-webstorage';
-import { HomeComponent } from './home/home.component';
-import { AddPostComponent } from './add-post/add-post.component';
-import { EditorModule } from '@tinymce/tinymce-angular';
+import { AuthService } from './auth/auth.service';
+import { HeaderModule } from './header/header.module';
 import { HttpClientInterceptor } from './http-client-interceptor';
-import { PostComponent } from './post/post.component';
-import { AuthGuard } from './auth.guard';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    RegisterComponent,
-    LoginComponent,
-    RegisterSuccessComponent,
-    HomeComponent,
-    AddPostComponent,
-    PostComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     Ng2Webstorage.forRoot(),
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent },
-      { path: 'register', component: RegisterComponent },
-      { path: 'post/:id', component: PostComponent },
-      { path: 'login', component: LoginComponent },
-      { path: 'register-success', component: RegisterSuccessComponent },
-      { path: 'home', component: HomeComponent },
-      /*Path com redirecionamento de segurança ao tentar inserir postagem sem autenticação do usuário.
-      se o mesmo for comentado ou removido será removido a proteção*/
-      /*{ path: 'add-post', component: AddPostComponent, canActivate: [AuthGuard] },*/
-      { path: 'add-post', component: AddPostComponent, canActivate: [AuthGuard] },
-      { path: 'add-post', component: AddPostComponent },
-    ]),
-    HttpClientModule,
-    EditorModule
+    HeaderModule
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true}],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true},
+    LocalStorageService,
+    AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

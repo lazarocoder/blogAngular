@@ -3,7 +3,9 @@ import { Observable } from 'rxjs';
 import { LocalStorageService } from 'ngx-webstorage';
 import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class HttpClientInterceptor implements HttpInterceptor {
   constructor(private $localStorage: LocalStorageService) {
 
