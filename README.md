@@ -1,5 +1,4 @@
 
-
 # Clone o repositório
 git clone https://github.com/lazarocoder/blogAngular.git
 
@@ -12,6 +11,8 @@ npm install
 
 # Inicie o projeto
 ng serve --open
+
+
 
 
 

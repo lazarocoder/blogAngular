@@ -16,13 +16,13 @@ export class RegisterComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private router:Router) {
     this.registerForm = this.formBuilder.group({
-      username: '',
+      userName: '',
       email: '',
       password: '',
       confirmPassword: ''
     });
     this.registerPayload = {
-      username: '',
+      userName: '',
       email: '',
       password: '',
       confirmPassword: ''
@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    this.registerPayload.username = this.registerForm.get('username').value;
+    this.registerPayload.userName = this.registerForm.get('userName').value;
     this.registerPayload.email = this.registerForm.get('email').value;
     this.registerPayload.password = this.registerForm.get('password').value;
     this.registerPayload.confirmPassword = this.registerForm.get('confirmPassword').value;
