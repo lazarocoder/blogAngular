@@ -1,6 +1,8 @@
 export class PostPayload{
-  id: String;
-  content: String;
-  title: String;
-  username: String
+  id: number;
+  content: string;
+  title: string;
+  userName: string;
+  createdOn: string;
+  updatedOn: string;
 }

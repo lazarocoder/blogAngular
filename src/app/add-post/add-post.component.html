@@ -1,7 +1,7 @@
- <div class="add-post-content">
+ <div *ngIf="isUpdate() ? (isLoggedIn() && isOwner()) : isLoggedIn()" class="add-post-content">
   <div class="container">
     <div>
-      <h3 class="new-post-title">Inserir post</h3>
+      <h3 class="new-post-title">{{ postPayload.id ? 'Atualizar post':'Inserir post' }}</h3>
     </div>
     <hr />
     <form [formGroup]="addPostForm" (ngSubmit)="addPost()">
