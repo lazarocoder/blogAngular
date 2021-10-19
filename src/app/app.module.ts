@@ -1,3 +1,4 @@
+import { HomeModule } from './home/home.module';
 import { HttpClient, HttpHandler, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -20,9 +21,10 @@ import { HttpClientInterceptor } from './http-client-interceptor';
     FormsModule,
     ReactiveFormsModule,
     Ng2Webstorage.forRoot(),
-    HeaderModule
+    HeaderModule,
+    HomeModule
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true},
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true },
     LocalStorageService,
     AuthService],
   bootstrap: [AppComponent]

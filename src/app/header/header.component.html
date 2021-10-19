@@ -2,15 +2,16 @@
   <div class="">
     <div class="row">
       <div class="col-md-6">
-        <h1><a href="" class="title">blog</a></h1>
+        <h1><a routerLink="/" class="title">blog</a></h1>
       </div>
-      <div class="col-md-3" *ngIf="isLoggedIn">
-        <a href="/home/add-post" class="new-post">Adicioanar post</a>
-        <a href="#" class="logout btn btn-default" (click)="logout()">Sair</a>
+      <div class="col-md-3" *ngIf="isLoggedIn()">
+        <a routerLink="/home/add-post" class="new-post">Adicioanar post</a>
+        <a [routerLink]="['']" class="logout btn btn-default" (click)="logout()">Sair</a>
       </div>
-      <div class="col-md-3">
-        <a href="/auth/login" class="login btn btn-default">Entrar</a>
-        <a href="/auth/register" class="register btn btn-default">Registre-se</a>
+      <div *ngIf="!isLoggedIn()" class="col-md-3">
+        <a routerLink="/posts" class="login btn btn-default">Posts</a>
+        <a routerLink="/auth/login" class="login btn btn-default">Entrar</a>
+        <a routerLink="/auth/register" class="register btn btn-default">Registre-se</a>
       </div>
     </div>
   </div>

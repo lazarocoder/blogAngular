@@ -1,6 +1,6 @@
 <!--app-header></app-header-->
-<div  class="container-md pt-5 pb-5">
-  <h2>Bem vindo ao blog!</h2>
+<div class="container-md pt-5 pb-5">
+  <h2>Posts</h2>
   <hr />
 
   <table class="table">
@@ -8,7 +8,6 @@
       <tr>
         <th>ID</th>
         <th>Criação</th>
-        <th>Atualização</th>
         <th>Título</th>
         <th>Texto</th>
         <th>Autor:</th>
@@ -19,7 +18,6 @@
       <tr *ngFor="let post of posts">
         <td>{{ post.id }}</td>
         <td>{{ post.createdOn }}</td>
-        <td>{{ post.updatedOn }}</td>
         <td>{{ post.title }}</td>
         <td [innerHTML]="post.content"></td>
         <td>{{ post.userName }}</td>
@@ -28,10 +26,10 @@
             <button class="btn btn-primary mr-2" (click)="visualizar(post.id)">
               Comentários
             </button>
-            <button *ngIf="isOwner(post.userName)" class="btn btn-primary mr-2" (click)="atualizar(post.id)">
+            <button *ngIf="isLoggedIn()" class="btn btn-primary mr-2" (click)="atualizar(post.id)">
               Atualizar
             </button>
-            <button *ngIf="isOwner(post.userName)" (click)="excluir(post.id)" class="btn btn-danger">
+            <button *ngIf="isLoggedIn()" (click)="excluir(post.id)" class="btn btn-danger">
               Remover
             </button>
           </div>

@@ -15,3 +15,7 @@ html {
   font-size: 20px;
   text-rendering: optimizeLegibility;
 }
+
+input.ng-dirty.ng-invalid {
+  color: red
+}

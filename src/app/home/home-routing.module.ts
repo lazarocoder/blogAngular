@@ -1,3 +1,4 @@
+import { CommentsComponent } from './../comments/comments.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LocalStorageService } from 'ngx-webstorage';
@@ -11,7 +12,8 @@ const routes: Routes = [
     children:[
       { path: 'post/:id', component: PostComponent },
       { path: 'add-post', component: AddPostComponent },
-      { path: 'add-post', component: AddPostComponent }
+      { path: 'add-post/:id', component: AddPostComponent },
+      { path: 'post/:id/comments', component: CommentsComponent }
     ]},
 
 ];
