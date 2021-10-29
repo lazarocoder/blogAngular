@@ -1,9 +1,9 @@
 import { AuthService } from './../auth/auth.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { AddPostService } from '../add-post.service';
+import { AddProjetoService } from '../add-projeto.service';
 import { Observable } from 'rxjs';
-import { PostPayload } from '../add-post/post-payload';
+import { ProjetoPayload } from '../add-projeto/projeto-payload';
 import { DatePipe } from '@angular/common';
 import * as moment from 'moment';
 
@@ -14,14 +14,14 @@ import * as moment from 'moment';
 })
 export class HomeComponent implements OnInit {
 
-  posts: Array<PostPayload>;
+  projetos: Array<ProjetoPayload>;
 
-  constructor(private postService: AddPostService, private router: Router, private authService: AuthService) { }
+  constructor(private projetoService: AddProjetoService, private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
-    this.getAllPosts();
-    this.postService.observableAddPost.subscribe(res => {
-      this.getAllPosts();
+    this.getAllProjetos();
+    this.projetoService.observableAddProjeto.subscribe(res => {
+      this.getAllProjetos();
     });
   }
 
@@ -29,23 +29,23 @@ export class HomeComponent implements OnInit {
     return this.authService.isOwner(userName);
   }
 
-  getAllPosts() {
-    this.postService.getAllPosts().subscribe(res => {
-      this.posts = res;
+  getAllProjetos() {
+    this.projetoService.getAllProjetos().subscribe(res => {
+      this.projetos = res;
     });
   }
 
   atualizar(id: number) {
-    this.router.navigate(['/home/add-post/' + id]);
+    this.router.navigate(['/home/add-projeto/' + id]);
   }
 
   visualizar(id: number) {
-    this.router.navigate(['/home/post/' + id]);
+    this.router.navigate(['/home/projeto/' + id]);
   }
 
   excluir(id: number) {
-    this.postService.deletePost(id).subscribe(res => {
-      this.getAllPosts();
+    this.projetoService.deleteProjeto(id).subscribe(res => {
+      this.getAllProjetos();
     });
   }
 

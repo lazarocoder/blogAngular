@@ -1,5 +1,5 @@
 # Clone o repositório
-git clone https://github.com/lazarocoder/blogAngular.git
+git clone https://github.com/lazarocoder/lamppAngular.git
 
 # Acesse o diretório
 

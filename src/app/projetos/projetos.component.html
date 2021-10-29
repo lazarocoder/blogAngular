@@ -1,6 +1,6 @@
-<!--app-header></app-header-->
+
 <div class="container-md pt-5 pb-5">
-  <h2>Lista de projetos</h2>
+  <h2>Projetos já realizados pela LAMPP-IT 2021</h2>
   <hr />
 
   <table class="table table-bordered spaceless">
@@ -12,28 +12,28 @@
         <th>Valor R$</th>
         <th>Descrição</th>
         <th>Responsável</th>
-        <th>Ações:</th>
+
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let projeto of projetos">
         <td>{{ projeto.id }}</td>
         <td>{{ projeto.dtCriacao }}</td>
-        <td>{{ projeto.dtCriacao }}</td>
+        <td>{{ projeto.dtFinalizacao }}</td>
         <td>{{ projeto.valor }}</td>
         <td [innerHTML]="projeto.descricao"></td>
         <td>{{ projeto.userName }}</td>
         <td>
           <div class="d-flex flex-row">
             <button
-              *ngIf="isOwner(projeto.userName)"
+              *ngIf="isLoggedIn()"
               class="btn btn-primary mr-2"
               (click)="atualizar(projeto.id)"
             >
               Atualizar
             </button>
             <button
-              *ngIf="isOwner(projeto.userName)"
+              *ngIf="isLoggedIn()"
               (click)="excluir(projeto.id)"
               class="btn btn-danger"
             >

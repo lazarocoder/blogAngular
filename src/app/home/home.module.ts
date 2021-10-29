@@ -1,13 +1,13 @@
-import { PostsComponent } from './../posts/posts.component';
-import { CommentsComponent } from './../comments/comments.component';
+import { ProjetosComponent } from '../projetos/projetos.component';
+
 import { CommonModule } from '@angular/common';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { AuthService } from '../auth/auth.service';
 import { HeaderModule } from '../header/header.module';
-import { AddPostComponent } from './../add-post/add-post.component';
-import { PostComponent } from './../post/post.component';
+import { AddProjetoComponent } from './../add-projeto/add-projeto.component';
+import { ProjetoComponent } from './../projeto/projeto.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 
@@ -21,11 +21,10 @@ registerLocaleData(localePt);
 @NgModule({
   declarations: [
     HomeComponent,
-    AddPostComponent,
-    PostComponent,
+    AddProjetoComponent,
+    ProjetoComponent,
     DateFormatPipe,
-    CommentsComponent,
-    PostsComponent
+    ProjetosComponent
   ],
   imports: [
     CommonModule,

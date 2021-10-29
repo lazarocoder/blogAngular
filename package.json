@@ -1,5 +1,5 @@
 {
-  "name": "ng-spring-blog-frontend",
+  "name": "ng-lampp-projetos-frontend",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -20,9 +20,12 @@
     "@angular/platform-browser-dynamic": "~7.1.0",
     "@angular/router": "~7.1.0",
     "@auth0/angular-jwt": "^5.0.2",
+    "angular-material": "^1.2.3",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
     "moment": "^2.29.1",
+    "primeicons": "^4.1.0",
+    "primeng": "^12.2.1",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"

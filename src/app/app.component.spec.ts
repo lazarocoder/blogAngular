@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ng-spring-blog-frontend'`, () => {
+  it(`should have as title 'Lampp projetos'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('ng-spring-blog-frontend');
+    expect(app.title).toEqual('Lampp projetos');
   });
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Bem vindo ao ng-spring-blog-frontend!');
+    expect(compiled.querySelector('h1').textContent).toContain('Bem vindo ao Lampp projetos!');
   });
 });

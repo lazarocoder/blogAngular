@@ -1,0 +1,32 @@
+<div
+  *ngIf="isUpdate() ? isLoggedIn() && isOwner() : isLoggedIn()"
+  class="add-projeto-content"
+>
+  <div class="container">
+    <div>
+      <h3 class="new-projeto">
+        {{ projetoPayload.id ? "Atualizar projeto" : "Inserir projeto" }}
+      </h3>
+    </div>
+    <hr />
+    <form [formGroup]="addProjetoForm" (ngSubmit)="addProjeto()">
+      <div class="form-group">
+        <label class="projeto">Valor R$</label>
+        <input
+          type="number"
+          [formControlName]="'valor'"
+          class="form-control"
+          placeholder="00,00"
+        />
+      </div>
+      <div class="form-group">
+        <label class="projeto-content">Descrição do projeto</label>
+        <editor [formControlName]="'body'" [init]="{ plugins: 'link' }">
+        </editor>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Adicionar</button>
+      </div>
+    </form>
+  </div>
+</div>

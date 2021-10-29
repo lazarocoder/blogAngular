@@ -9,6 +9,6 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Bem vindo ao ng-spring-blog-frontend!');
+    expect(page.getTitleText()).toEqual('Bem vindo ao Lampp projetos!');
   });
 });

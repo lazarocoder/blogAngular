@@ -1,11 +1,11 @@
-.add-post-content{
+.add-projeto-descricao{
   padding-top: 20px;
 }
 
-.new-post-title{
+.new-projeto{
   color: royalblue;
 }
 
-.post-content, .post-title{
+.projeto-descricao, .projeto{
   color: royalblue;
 }
