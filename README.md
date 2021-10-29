@@ -8,5 +8,7 @@ git clone https://github.com/lazarocoder/lamppAngular.git
 # Instale as dependências
 npm install
 
+npm install bootstrap@4.1.3
+
 # Inicie o projeto
 ng serve --open
