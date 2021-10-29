@@ -1,19 +1,19 @@
-import { CommentsComponent } from './../comments/comments.component';
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LocalStorageService } from 'ngx-webstorage';
 import { AuthService } from '../auth/auth.service';
-import { AddPostComponent } from './../add-post/add-post.component';
-import { PostComponent } from './../post/post.component';
+import { AddProjetoComponent } from './../add-projeto/add-projeto.component';
+import { ProjetoComponent } from './../projeto/projeto.component';
 import { HomeComponent } from './home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent,
     children:[
-      { path: 'post/:id', component: PostComponent },
-      { path: 'add-post', component: AddPostComponent },
-      { path: 'add-post/:id', component: AddPostComponent },
-      { path: 'post/:id/comments', component: CommentsComponent }
+      { path: 'projeto/:id', component: ProjetoComponent },
+      { path: 'add-projeto', component: AddProjetoComponent },
+      { path: 'add-projeto/:id', component: AddProjetoComponent }
+
     ]},
 
 ];

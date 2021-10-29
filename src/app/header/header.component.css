@@ -3,7 +3,7 @@
   background: rgb(225, 142, 65);
 }
 
-.title{
+.valor{
   color: aliceblue;
   text-decoration: none;
 }
@@ -15,13 +15,13 @@
   padding-top: 10px;
 }
 
-.logout,.new-post{
+.logout,.new-projeto{
   float: right;
   color: aliceblue;
   padding-top: 10px;
 }
 
-.logout:hover, .new-post:hover{
+.logout:hover, .new-projeto:hover{
   color: aliceblue;
   text-decoration: none;
 }

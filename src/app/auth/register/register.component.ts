@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { RegisterPayload } from '../register-payload';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
-import { emitWarning } from 'process';
 
 @Component({
   selector: 'app-register',
@@ -17,10 +16,10 @@ export class RegisterComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
     this.registerForm = this.formBuilder.group({
-      userName: ['', Validators.required],
-      email: ['', Validators.required, Validators.email],
-      password: ['', Validators.required],
-      confirmPassword: ['', Validators.required]
+      userName: '',
+      email: '',
+      password: '',
+      confirmPassword: ''
     });
     this.registerPayload = {
       userName: '',
@@ -41,13 +40,11 @@ export class RegisterComponent implements OnInit {
       this.registerPayload.confirmPassword = this.registerForm.get('confirmPassword').value;
 
       this.authService.register(this.registerPayload).subscribe(data => {
-        console.log('Registered successfully!');
         this.router.navigateByUrl('/auth/register-success');
       }, error => {
-        console.log('Registration failure!');
       });
     } else {
-      alert('invalid data!')
+
     }
   }
 }
